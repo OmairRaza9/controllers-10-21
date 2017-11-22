@@ -8,7 +8,6 @@ class PagesController < ApplicationController
   end
 
   def about
-    @header = "TEST EXAMPLE"
   end
 
   def contest
@@ -27,5 +26,16 @@ class PagesController < ApplicationController
   def set_kitten_url
     requested_size = params[:size]
     @kitten_url = "http://lorempixel.com/#{requested_size}/#{requested_size}/cats"
+  end
+
+  def secrets
+
+    if params[:magic_word] == "boo"
+      flash[:notice] = "Your password is correct"
+    else
+      flash[:alert] = "Sorry, you do not have access"
+      redirect_to "/welcome"
+    end
+
   end
 end
