@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
     get '/welcome' => 'pages#welcome'
 
-    get '/' => 'pages#welcome'
+    get '/' => 'pages#welcome'  #do I need a method for this? i think no
 
     get '/about_us' => 'pages#about'
+
+    get '/contest' => 'pages#contest'
 end
